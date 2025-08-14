@@ -92,7 +92,7 @@ function StatCard({
   );
 
   return (
-    <Card className="flex h-24 w-full items-center p-4 mx-6 bg-black border-2 border-amber-400 shadow-lg shadow-amber-900">
+    <Card className="flex h-24 w-full items-start p-4 mx-6 ">
       <div className="flex items-center justify-center gap-8">
         {icon}
         <div className=''>
