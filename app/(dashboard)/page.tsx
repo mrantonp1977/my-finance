@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <div className="h-full bg-background">
-      <div className="border-b-2 bg-card">
+      <div className="border-b-1 bg-black">
         <div className="flex flex-wrap items-center justify-between gap-6 py-8 px-18">
           <p className="text-3xl font-bold">Hello, {user.firstName}! 👋</p>
           <div className="flex items-center gap-7">
