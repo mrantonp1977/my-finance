@@ -1,6 +1,6 @@
 'use client';
 
-import { Period, TimeFrame } from '@/lib/types';
+import { Period, Timeframe } from '@/lib/types';
 import { useQuery } from '@tanstack/react-query';
 import SkeletonWrapper from './SkeletonWrapper';
 import { Tabs, TabsList, TabsTrigger } from './ui/tabs';
@@ -17,8 +17,8 @@ import { GetHistoryPeriodsResponseType } from '@/app/api/history-period/route';
 interface Props {
   period: Period;
   setPeriod: (period: Period) => void;
-  timeFrame: TimeFrame;
-  setTimeFrame: (timeFrame: TimeFrame) => void;
+  timeFrame: Timeframe;
+  setTimeFrame: (timeFrame: Timeframe) => void;
 }
 
 const HistoryPeriodSelector = ({
@@ -37,7 +37,7 @@ const HistoryPeriodSelector = ({
       <SkeletonWrapper isLoading={historyPeriods.isFetching} fullWidth={false}>
         <Tabs
           value={timeFrame}
-          onValueChange={(value) => setTimeFrame(value as TimeFrame)}
+          onValueChange={(value) => setTimeFrame(value as Timeframe)}
         >
           <TabsList>
             <TabsTrigger value="year">Year</TabsTrigger>
@@ -46,7 +46,7 @@ const HistoryPeriodSelector = ({
         </Tabs>
       </SkeletonWrapper>
       <div className="flex flex-wrap items-center gap-2">
-        <SkeletonWrapper isLoading={historyPeriods.isFetching}>
+        <SkeletonWrapper isLoading={historyPeriods.isFetching} fullWidth={false}>
           <YearSelector
             period={period}
             setPeriod={setPeriod}
